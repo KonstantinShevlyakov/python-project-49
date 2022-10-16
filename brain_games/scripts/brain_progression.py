@@ -27,6 +27,7 @@ def main():
         correct_answer = choice(progression)
         index = progression.index(correct_answer)
         progression[index] = '..'
+        progression = ' '.join(str(element) for element in progression)
         print(f'Question: {progression}')
         answer = prompt.string('Your answer: ')
         if answer != str(correct_answer):
