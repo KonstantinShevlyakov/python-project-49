@@ -5,7 +5,7 @@ brain-games:
 	poetry run brain-games
 
 brain-even:
-    poetry run brain-even
+	poetry run break-even
 
 build:
 	poetry build
