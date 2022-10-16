@@ -24,10 +24,10 @@ def main():
         first_num = randint(1, 10)
         second_num = randint(1, 10)
         operator = choice(operators)
-        print(f'Question:{first_num} {operator} {second_num}')
+        print(f'Question: {first_num} {operator} {second_num}')
         answer = prompt.string('Your answer: ')
         correct_answer = calc(first_num, second_num, operator)
-        if answer != correct_answer:
+        if answer != str(correct_answer):
             print(f"'{answer}' is wrong answer ;(. "
                   f"Correct answer was '{correct_answer}'."
                   f"\nLet's try again, {name}")
