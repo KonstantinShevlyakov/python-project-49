@@ -7,7 +7,7 @@ import brain_games.scripts.brain_games
 def gcd(num1, num2):
     if num2 != 0:
         tmp_num = num1 % num2
-        gcd(num2, tmp_num)
+        return gcd(num2, tmp_num)
     else:
         return num1
 
