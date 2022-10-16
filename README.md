@@ -3,3 +3,6 @@
 
 ### Maintainability:
 [![Maintainability](https://api.codeclimate.com/v1/badges/05345e9a4acaeaaaa4a7/maintainability)](https://codeclimate.com/github/KonstantinShevlyakov/python-project-49/maintainability)
+
+### Brain Even Game
+[![asciicast](https://asciinema.org/a/p4yjBWEqZTXhubvLxchW5qAtS.svg)](https://asciinema.org/a/p4yjBWEqZTXhubvLxchW5qAtS)
