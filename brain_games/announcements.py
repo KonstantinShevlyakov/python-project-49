@@ -19,7 +19,7 @@ def get_result(answer, correct_answer, name, count):
         if answer != str(correct_answer):
             print(f"'{answer}' is wrong answer ;(. "
                   f"Correct answer was '{correct_answer}'."
-                  f"\nLet's try again, {name}!")
+                  f"\nLet's try again,SOSI {name}!")
             return result
         else:
             print('Correct!')
