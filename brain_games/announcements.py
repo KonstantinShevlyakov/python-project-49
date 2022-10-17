@@ -12,12 +12,12 @@ def rounds_count():
     return 3
 
 
-def game_result(answer, correct_answer, name, count):
+def get_result(answer, correct_answer, name, count):
     result = 0
-    if count < rounds_count():
+    if count < rounds_count() - 1:
         if answer != correct_answer:
             print(f"'{answer}' is wrong answer ;(. "
-                  f"Correct answer is '{correct_answer}'."
+                  f"Correct answer was '{correct_answer}'."
                   f"\nLet's try again, {name}")
             return result
         else:
