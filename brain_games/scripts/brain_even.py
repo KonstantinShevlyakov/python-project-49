@@ -2,6 +2,7 @@
 # import brain_games.scripts.brain_games
 from random import randint
 import brain_games.announcements
+from brain_games.announcements import get_result
 import prompt
 
 
@@ -18,10 +19,8 @@ def main():
         print(f'Question: {random_int}')
         answer = prompt.string('Your answer: ')
         correct_answer = is_even(random_int)
-        result = brain_games.announcements.get_result(answer, correct_answer, name, count)
+        result = get_result(answer, correct_answer, name, count)
         if result == 0:
-            break
-        elif result == 2:
             break
         else:
             count += 1

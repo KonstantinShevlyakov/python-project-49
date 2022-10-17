@@ -1,6 +1,7 @@
 #!usr/bin/env python3
 from random import randint, choice
-import brain_games.scripts.brain_games
+import brain_games.announcements
+from brain_games.announcements import get_result
 import prompt
 
 
@@ -19,10 +20,10 @@ def get_progression():
 
 
 def main():
-    name = brain_games.scripts.brain_games.main()
+    name = brain_games.announcements.main()
     count = 0
     print('What number is missing in the progression?')
-    while count < 3:
+    while count < brain_games.announcements.rounds_count():
         progression = get_progression()
         correct_answer = choice(progression)
         index = progression.index(correct_answer)
@@ -30,14 +31,11 @@ def main():
         progression = ' '.join(str(element) for element in progression)
         print(f'Question: {progression}')
         answer = prompt.string('Your answer: ')
-        if answer != str(correct_answer):
-            print(f"'{answer}' is wrong answer ;(. "
-                  f"Correct answer was '{correct_answer}'."
-                  f"\nLet's try again, {name}")
+        result = get_result(answer, correct_answer, name, count)
+        if result == 0:
             break
-        count += 1
-        if count == 3:
-            print(f'Congratulations, {name}!')
+        else:
+            count += 1
 
 
 if __name__ == '__main__':

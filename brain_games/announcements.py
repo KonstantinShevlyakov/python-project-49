@@ -15,7 +15,7 @@ def rounds_count():
 def get_result(answer, correct_answer, name, count):
     result = 0
     if count < rounds_count() - 1:
-        if answer != correct_answer:
+        if answer != str(correct_answer):
             print(f"'{answer}' is wrong answer ;(. "
                   f"Correct answer was '{correct_answer}'."
                   f"\nLet's try again, {name}")
@@ -26,8 +26,6 @@ def get_result(answer, correct_answer, name, count):
             return result
     else:
         print(f'Congratulations, {name}!')
-        result = 2
-        return result
 
 
 if __name__ == '__main__':

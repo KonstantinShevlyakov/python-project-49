@@ -1,7 +1,8 @@
 #!usr/bin/env python3
 from random import randint, choice
 import prompt
-import brain_games.scripts.brain_games
+import brain_games.announcements
+from brain_games.announcements import get_result
 
 
 def calc(num1, num2, operator):
@@ -16,25 +17,22 @@ def calc(num1, num2, operator):
 
 
 def main():
-    name = brain_games.scripts.brain_games.main()
+    name = brain_games.announcements.main()
     count = 0
     operators = ['+', '-', '*']
     print('What is the result of the expression?')
-    while count < 3:
+    while count < brain_games.announcements.rounds_count():
         first_num = randint(1, 10)
         second_num = randint(1, 10)
         operator = choice(operators)
         print(f'Question: {first_num} {operator} {second_num}')
         answer = prompt.string('Your answer: ')
         correct_answer = calc(first_num, second_num, operator)
-        if answer != str(correct_answer):
-            print(f"'{answer}' is wrong answer ;(. "
-                  f"Correct answer was '{correct_answer}'."
-                  f"\nLet's try again, {name}")
+        result = get_result(answer, correct_answer, name, count)
+        if result == 0:
             break
-        count += 1
-        if count == 3:
-            print(f'Congratulations, {name}!')
+        else:
+            count += 1
 
 
 if __name__ == '__main__':
