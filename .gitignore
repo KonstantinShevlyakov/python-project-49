@@ -1,6 +1,6 @@
 .venv/
 /dist
 /brain_games/__pycache__
-/games/__pycache__
-/scripts/__pychache__
+/brain_games/games/__pycache__
+/brain_games/scripts/__pychache__
 .idea/

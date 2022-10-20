@@ -1,8 +1,8 @@
 #!usr/bin/env python3
 from random import randint, choice
 import brain_games.announcements
-from brain_games.announcements import get_result
-import prompt
+# from brain_games.announcements import get_result
+# import prompt
 
 
 def get_progression():
@@ -20,22 +20,36 @@ def get_progression():
 
 
 def main():
-    name = brain_games.announcements.main()
+    announcement = 'What number is missing in the progression?'
     count = 0
-    print('What number is missing in the progression?')
+    game_data = []
     while count < brain_games.announcements.rounds_count():
         progression = get_progression()
         correct_answer = choice(progression)
         index = progression.index(correct_answer)
         progression[index] = '..'
         progression = ' '.join(str(element) for element in progression)
-        print(f'Question: {progression}')
-        answer = prompt.string('Your answer: ')
-        result = get_result(answer, correct_answer, name, count)
-        if result == 0:
-            break
-        else:
-            count += 1
+        game_data.append((progression, str(correct_answer)))
+        count += 1
+    return brain_games.announcements.main(announcement, game_data)
+
+# def main():
+#     name = brain_games.announcements.main()
+#     count = 0
+#     print('What number is missing in the progression?')
+#     while count < brain_games.announcements.rounds_count():
+#         progression = get_progression()
+#         correct_answer = choice(progression)
+#         index = progression.index(correct_answer)
+#         progression[index] = '..'
+#         progression = ' '.join(str(element) for element in progression)
+#         print(f'Question: {progression}')
+#         answer = prompt.string('Your answer: ')
+#         result = get_result(answer, correct_answer, name, count)
+#         if result == 0:
+#             break
+#         else:
+#             count += 1
 
 
 if __name__ == '__main__':
