@@ -1,9 +1,6 @@
 #!usr/bin/env python3
 from random import randint
 from math import sqrt
-import brain_games.announcements
-# from brain_games.announcements import get_result
-# import prompt
 
 
 def is_prime(num):
@@ -21,32 +18,14 @@ def is_prime(num):
         return 'no'
 
 
-def main():
-    announcement = 'Answer "yes" if given number is prime. ' \
-                   'Otherwise answer "no".'
-    count = 0
-    game_data = []
-    while count < brain_games.announcements.rounds_count():
-        num = randint(0, 100)
-        correct_answer = is_prime(num)
-        game_data.append((str(num), str(correct_answer)))
-        count += 1
-    return brain_games.announcements.main(announcement, game_data)
+def get_announcement():
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
-# def main():
-#     name = brain_games.announcements.main()
-#     count = 0
-#     print('Answer "yes" if given number is prime. Otherwise answer "no".')
-#     while count < brain_games.announcements.rounds_count():
-#         number = randint(0, 100)
-#         print(f'Question: {number}')
-#         answer = prompt.string('Your answer: ')
-#         correct_answer = is_prime(number)
-#         result = get_result(answer, correct_answer, name, count)
-#         if result == 0:
-#             break
-#         else:
-#             count += 1
+
+def main():
+    question = randint(0, 100)
+    correct_answer = is_prime(question)
+    return question, correct_answer
 
 
 if __name__ == '__main__':

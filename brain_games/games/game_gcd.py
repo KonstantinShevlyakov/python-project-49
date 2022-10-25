@@ -1,40 +1,18 @@
 #!usr/bin/env
 from random import randint
-# import prompt
-import brain_games.announcements
-# from brain_games.announcements import get_result
 from math import gcd
 
 
+def get_announcement():
+    return 'Find the greatest common divisor of given numbers.'
+
+
 def main():
-    announcement = 'Find the greatest common divisor of given numbers.'
-    count = 0
-    game_data = []
-    while count < brain_games.announcements.rounds_count():
-        num1 = randint(1, 100)
-        num2 = randint(1, 100)
-        question = f'{num1} {num2}'
-        correct_answer = gcd(num1, num2)
-        game_data.append((question, str(correct_answer)))
-        count += 1
-    return brain_games.announcements.main(announcement, game_data)
-
-
-# def main():
-#     name = brain_games.announcements.main()
-#     count = 0
-#     print('Find the greatest common divisor of given numbers.')
-#     while count < brain_games.announcements.rounds_count():
-#         num1 = randint(1, 100)
-#         num2 = randint(1, 100)
-#         print(f'Question: {num1} {num2}')
-#         answer = prompt.string('Your answer: ')
-#         correct_answer = gcd(num1, num2)
-#         result = get_result(answer, correct_answer, name, count)
-#         if result == 0:
-#             break
-#         else:
-#             count += 1
+    num1 = randint(1, 100)
+    num2 = randint(1, 100)
+    question = f'{num1} {num2}'
+    correct_answer = gcd(num1, num2)
+    return question, correct_answer
 
 
 if __name__ == '__main__':

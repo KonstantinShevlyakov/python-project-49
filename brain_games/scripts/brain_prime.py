@@ -1,9 +1,10 @@
 #!usr/bin/env python3
-from brain_games.games.game_prime import main as prime
+from brain_games.games import game_prime
+import brain_games.engine
 
 
 def main():
-    prime()
+    brain_games.engine.main(game_prime)
 
 
 if __name__ == '__main__':
