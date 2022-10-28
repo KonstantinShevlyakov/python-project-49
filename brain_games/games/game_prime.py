@@ -1,4 +1,3 @@
-#!usr/bin/env python3
 from random import randint
 from math import sqrt
 
@@ -18,15 +17,10 @@ def is_prime(num):
         return 'no'
 
 
-def get_announcement():
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".'
+ANNOUNCEMENT = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def main():
+def get_game_data():
     question = randint(0, 100)
     correct_answer = is_prime(question)
     return question, correct_answer
-
-
-if __name__ == '__main__':
-    main()

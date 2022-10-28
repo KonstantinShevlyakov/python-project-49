@@ -1,4 +1,3 @@
-#!usr/bin/env python3
 from random import randint, choice
 
 
@@ -13,11 +12,10 @@ def calc(num1, num2, operator):
         return 'Wrong operator'
 
 
-def get_announcement():
-    return 'What is the result of the expression?'
+ANNOUNCEMENT = 'What is the result of the expression?'
 
 
-def main():
+def get_game_data():
     operators = ['+', '-', '*']
     num1 = randint(1, 10)
     num2 = randint(1, 10)
@@ -25,7 +23,3 @@ def main():
     correct_answer = calc(num1, num2, operator)
     question = f'{num1} {operator} {num2}'
     return question, correct_answer
-
-
-if __name__ == '__main__':
-    main()

@@ -1,4 +1,3 @@
-#!usr/bin/env python3
 from random import randint, choice
 
 
@@ -16,18 +15,13 @@ def get_progression():
     return progression
 
 
-def get_announcement():
-    return 'What number is missing in the progression?'
+ANNOUNCEMENT = 'What number is missing in the progression?'
 
 
-def main():
+def get_game_data():
     question = get_progression()
     correct_answer = choice(question)
     index = question.index(correct_answer)
     question[index] = '..'
     question = ' '.join(str(element) for element in question)
     return question, correct_answer
-
-
-if __name__ == '__main__':
-    main()
