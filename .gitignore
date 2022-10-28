@@ -4,3 +4,4 @@
 /brain_games/games/__pycache__/
 /brain_games/scripts/__pychache__/
 .idea/
+__pycache__*
